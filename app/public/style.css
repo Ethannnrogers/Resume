@@ -21,6 +21,10 @@ body {
 
 }
 
+a { 
+    color:white!important;
+}
+
 .label {
     background-color: rgba(0, 0, 0, 0.349);
     padding: 5px 0px 5px 0px; 
