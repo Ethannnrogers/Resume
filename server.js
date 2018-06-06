@@ -12,11 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-app.use('/public', express.static(path.join(__dirname, 'public')));
 
-
- 
-htmlRoutes(app); 
+app.use(express.static(__dirname + "public"));
 
 app.post('/send', function(req, res, next) {
   const transporter = nodemailer.createTransport({
@@ -40,6 +37,8 @@ app.post('/send', function(req, res, next) {
     }
   })
 })
+
+htmlRoutes(app); 
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
