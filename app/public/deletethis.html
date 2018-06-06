@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ethan Rogers</title>
-    <link href="https://fonts.googleapis.com/css?family=Arimo|Dosis|Hind" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -14,7 +13,6 @@
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript">
-
 $(document).ready(function() {
     $('#leader').hide();
     $('#leader-text').hide();
@@ -29,8 +27,8 @@ $(document).ready(function() {
     $('#creator-2').hide();
     $('#creator-text-2').hide();
     $('#name-2').hide();
-    $('#first-div').hide();
-    $('#nav').hide();
+    // $('#first-div').hide();
+    
     
 });
 
@@ -40,30 +38,32 @@ $(document).scroll(function() {
     
     var y = $(this).scrollTop();
     if (y > 1) {
+        // $('#name-1').hide();
         $('#landing-div').hide();
         $('#name-2').fadeIn();  
         $('#position').addClass("bg-color"); 
+        // $("#first-div").fadeIn();   
     }else {
         $('#landing-div').fadeIn();
+        $('#name-2').hide();
         $('#position').removeClass("bg-color");
-    }
-    if (y > 100 && y < 110) {
-        $('#nav').fadeOut();  
-    } else {
-        $('#nav').fadeOut();  
     }
     if (y > 100) {
       $('#leader').fadeIn();
       $('#line').addClass("line-exist");
+      
+      
     }else {
       $('#leader').fadeOut();
       $('#line').removeClass("line-exist");
+      
     }
     if (y > 150) {
         $('#leader-text').fadeIn();
     }else {
         $('#leader-text').fadeOut();
     }
+
     if (y > 300) {
         $('#thinker').fadeIn();
         $('#thinker-2').fadeIn();
@@ -158,30 +158,18 @@ $(document).scroll(function() {
     $('#soft-skills').addClass("logical-height");
 
     //footer navbar 
-    $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       $('#nav').slideDown("slow").show();
-   }
-
-});
-
-    
+//     $(window).scroll(function() {
+//    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       
+//    }
+// });
 
     $('#more-btn').on("click", function() {
-        $('#first-div').slideDown("slow").show();
+        $('#first-div').addClass("bottom-up");
     })
+    
+    // Skill bar section //  
 
-    $('#less-btn').on("click", function() {
-        $('#nav').hide();
-        $('#first-div').slideDown().show();
-       
-
-    });
-
-    $('#less-btn-2').on("click", function() {
-        $('#first-div').slideUp().show();
-        $('#nav').hide();
-    })
 
   });
 
@@ -192,91 +180,27 @@ $(document).scroll(function() {
 
 <div id="position">
     
-    
 
-    <!-- <div class="container">
-        <nav>
-            <h1>Ethan Rogers</h1>
-        </nav>
-    </div> -->
-
-    <!-- Nav -->
-    <!-- <button id="less-title">MY WORK</button> -->
-    <div id="nav">
-        <div  id="less-btn">
-            <h6 id="less-title">MY WORK</h6>
-            <i class="fas fa-angle-double-down" id="less-btn-arrow"></i> 
-            
-        </div>        
-    </div>
-
-   
-
-
-
-    <div class ="text-center" id="first-div">
-
-        <div class="container">
-            <div class="row" id="current-project">
-                <div class="col-lg-6 text-left">
-                    <h2 id="current-project-title"><strong><a href="https://grasshopper-learning.herokuapp.com/" target="_blank">My current project</a></strong></h2>
-                </div>
-                <div class="col-lg-6 text-right">
-                    <button id="project-btn">see my code</button>
-                    <a href="https://github.com/Ethannnrogers" target="_blank"><i class="fab fa-github my-work-icon"></i></a>
-                </div>
-            </div>
-        </div>
-        
-
-        <iframe class="hide" src="https://grasshopper-learning.herokuapp.com/">
-
-        </iframe>
-
-        <div id="frame-cover">
-
-        </div>
-        
-       
-        <div id="less-btn-2">
-            <h6 id="less-title-2">BACK</h6>
-            <i class="fas fa-angle-double-up" id="less-btn-arrow-2"></i> 
-        </div>
-            
-            
-    </div>
 
 
     <div class="container text-center" id="landing-div">
-            <div class="row" id="landing-title">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8">
-                        <div class="title-section">
-                                <h2 class="display-2" id="name-3">Ethan Rogers</h2>
-                            </div>
-                    </div>
-                    <div class="col-lg-2"></div>
+        <div class="row">
+            <div class="col-xl-12">
+                <h3 class="display-1" id="scroll">SCROLL</h3><br><br>
+                <div class="arrow bounce">
+                    <i class="fas fa-angle-double-down"></i> 
                 </div>
-                <div class="row">
-                        <div class="col-xl-12" >
-                            
-                            <div class="arrow bounce" id="scroll">
-                                    <h3 id="scroll-txt">SCROLL</h3>
-                                <i class="fas fa-angle-double-down"></i> 
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
 
     </div>
+
 
 
     <div class="container text-center white-txt" id="first-title">
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <!-- <div class="title-section" id="name-1">
-                    <h2 class="display-2">Ethan Rogers</h2>
-                </div> -->
                 <div class="title-section">
                         <h2 class="display-2" id="name-2">Ethan Rogers</h2>
                     </div>
@@ -296,14 +220,14 @@ $(document).scroll(function() {
                 </div>
                 <div class="col-lg-6 text-left " >
                     <p class="soft-skill" id="leader-text">
-                       I am a front-end developer focused on writing code to produce interactive modern websites
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque maxime facilis vitae tenetur incidunt minus cupiditate laudantium quae molestiae nesciunt.
                     </p>    
                 </div>
             </div>
 
             <div class="row media-large">
                 <div class="col-lg-6 text-right col-left" >
-                    <p class="soft-skill" id="thinker-text">I use modern design concepts for creating simple interactive web experiences</p>
+                    <p class="soft-skill" id="thinker-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tenetur tempore magni illo delectus exercitationem fuga modi voluptas quisquam libero.</p>
                     
                 </div>
                 <div class="col-lg-6 text-left">
@@ -316,7 +240,7 @@ $(document).scroll(function() {
                     <h2 class="display-2 soft-skill-title" id="thinker-2">Designer</h2> 
                 </div>
                 <div class="col-lg-6 text-right">
-                    <p class="soft-skill" id="thinker-text-2">I use modern design concepts for creating simple interactive web experiences</p>
+                    <p class="soft-skill" id="thinker-text-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tenetur tempore magni illo delectus exercitationem fuga modi voluptas quisquam libero.</p>
                 </div>
             </div>
 
@@ -325,13 +249,13 @@ $(document).scroll(function() {
                     <h2 class="display-2 soft-skill-title" id="student">Creator</h2>
                 </div>
                 <div class="col-lg-6 text-left">
-                    <p class="soft-skill" id="student-text">I have a passion for creating brands around innovative concepts and ecommerce stores</p>   
+                    <p class="soft-skill" id="student-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, unde? Voluptas assumenda, maiores eos est expedita sunt fugiat reiciendis inventore?</p>   
                 </div>
             </div>
 
             <div class="row media-large">
                 <div class="col-lg-6 text-right col-left" >
-                    <p class="soft-skill" id="creator-text">I am consistently learning new industry standards to adapt to the vastly changing internet </p>
+                    <p class="soft-skill" id="creator-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tenetur tempore magni illo delectus exercitationem fuga modi voluptas quisquam libero.</p>
                     
                 </div>
                 <div class="col-lg-6 text-left">
@@ -344,7 +268,7 @@ $(document).scroll(function() {
                     <h2 class="display-2 soft-skill-title" id="creator-2">Student</h2> 
                 </div>
                 <div class="col-lg-6 text-right">
-                    <p class="soft-skill" id="creator-text-2">I am consistently learning new industry standards to adapt to the vastly changing internet</p>
+                    <p class="soft-skill" id="creator-text-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tenetur tempore magni illo delectus exercitationem fuga modi voluptas quisquam libero.</p>
                 </div>
             </div>
             
@@ -376,9 +300,6 @@ $(document).scroll(function() {
     <div id="section-2">
         <div class="container white-txt">
             <div class="row">
-                <!-- <div class="col-lg-6" id="hard-skills-left">
-                    <h2 class="display-4 text-center hard-skill-title skills-resize "><strong>Projects</strong></h2>   
-                </div> -->
                 <div class="col-lg-12" id="hard-skills">
 
                     <h2 class="display-4 text-right hard-skill-title skills-resize "><strong>Languages</strong></h2>
@@ -457,21 +378,21 @@ $(document).scroll(function() {
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
-                        <form method="POST" action="/send">
+                        <form>
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" class="form-control" name="name" placeholder="First name">
+                                    <input type="text" class="form-control" placeholder="First name">
                                 </div>
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Last name">
                                 </div>
                             </div>
                             <br>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Email">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                             <br>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" placeholder="Message"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
                             <br>
-                            <button class="btn btn-new" type="submit">Send</button>
+                            <button class="btn btn-new">Send</button>
                         </form>
                     </div>
                     <div class="col-lg-2"></div>
@@ -486,11 +407,11 @@ $(document).scroll(function() {
                 <div class="row">
                     <div class="col-lg-12 text-center">
                       
-                            <a href="https://www.linkedin.com/in/ethannnrogers/" target="_blank"><i class="fab fa-linkedin-in footer-icon"></i></a>
+                            <i class="fab fa-linkedin-in footer-icon"></i>
              
                             
-                            <a href="https://github.com/Ethannnrogers" target="_blank"><i class="fab fa-github footer-icon"></i></a>
-                            <!-- <i class="fas fa-code"></i> -->
+                            <i class="fab fa-github footer-icon"></i>
+            
                             
 
                             <p id="footer-txt">Created by me &copy 2018</p>
@@ -499,12 +420,26 @@ $(document).scroll(function() {
             </div>
         </footer>
 
-       
+        <div id="more-btn">
+            <div class="">
+                <h6 class="white-txt" id="more-title">MORE</h6>
+                <i class="fas fa-angle-double-down" id="more-btn-arrow"></i> 
+            </div>
+        </div>
 
-        <!-- Navigation -->
+        <div id="first-div">
+            <div>
+                <code>
+                    
+                    
+                </code>
+            </div>
+                        
+        </div>
+
 
 </div>
 
-<script src="/logic.js"></script>
+<script src="logic.js"></script>
 </body>
 </html>
