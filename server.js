@@ -15,29 +15,6 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 app.use(express.static(__dirname + "public"));
 
-app.post('/send', function(req, res, next) {
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.USERNAME,
-      pass: process.env.PASSWORD
-    }
-  })
-  const mailOptions = {
-    from: `${req.body.email}`,
-    to: 'erogers9909@gmail.com',
-    subject: `${req.body.name}`,
-    text: `${req.body.message}`
-  }
-  transporter.sendMail(mailOptions, function(err, res) {
-    if (err) {
-      console.error('there was an error: ', err);
-    } else {
-      console.log('here is the res: ', res)
-    }
-  })
-})
-
 htmlRoutes(app); 
 
 app.listen(PORT, function() {
